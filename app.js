@@ -419,6 +419,15 @@ let currentLang = 'fr'; // 'fr' ou 'en'
 // Textes statiques (pour les éléments avec data-i18n)
 const translations = {
     fr: {
+       "home": "Accueil",
+       "projects": "Projets",
+       "skills": "Compétences",
+       "education": "Formation",
+       "experience": "Expérience",
+       "contact": "Contact",
+       "home-greeting": "Bonjour, je suis <span class=\"highlight\">Marie Simone DJIBOUNE</span>",
+       "home-title": "Débutante en developpement web & Étudiante en Géomatique",
+       "home-bio": "Étudiante motivée et dynamique en GEOMATIQUE, cherchant à acquérir des connaissances et de l'expérience professionnelle, en étude des sciences géographiques et en informatique. Passionnée par la cartographie interactive et le développement web, je combine mes compétences en géomatique avec le code pour créer des sites utiles et esthétiques.",
        "projects-title": "Mes projets",
        "skills-title": "Compétences techniques",
        "education-title": "Formation",
@@ -432,12 +441,31 @@ const translations = {
        "phone": "+221 78 448 55 12",
        "email-coord": "mariesimonedjiboune5@gmail.com",
        "see-project": "Voir le projet",
+       "form-name": "Nom",
+       "form-email": "Email",
+       "form-message-label": "Message",
+       "form-submit": "Envoyer le message",
+       "qr-title": "📱 Scanner pour voir mon travail",
+       "qr-note": "Ou visitez :",
+       "copy-btn": "Copier le lien",
+       "coordinates-title": "Mes coordonnées",
+       "footer-rights": "© 2026 Marie Simone DJIBOUNE. Tous droits réservés.",
+       "footer-made": "Réalisé en HTML/CSS/JS",
        "contact-success": "✅ Merci ! Je te réponds dans 2 heures.",
        "contact-error": "Veuillez remplir tous les champs.",
        "contact-email-error": "Veuillez entrer un email valide.",
        "contact-domain-error": "Veuillez saisir le nom de domaine (ex: .com, .fr).",
     },
     en: {
+        "home": "Home",
+        "projects": "Projects",
+        "skills": "Skills",
+        "education": "Education",
+        "experience": "Experience",
+        "contact": "Contact",
+        "home-greeting": "Hello, I am <span class=\"highlight\">Marie Simone DJIBOUNE</span>",
+        "home-title": "Beginner in web development & Geomatics Student",
+        "home-bio": "Motivated and dynamic student in GEOMATICS, seeking to acquire knowledge and professional experience in geographic sciences and computer science. Passionate about interactive cartography and web development, I combine my geomatics skills with coding to create useful and aesthetic websites.",
         "projects-title": "My projects",
         "skills-title": "Technical skills",
         "education-title": "Education",
@@ -451,6 +479,16 @@ const translations = {
         "phone": "+221 78 448 55 12",
         "email-coord": "mariesimonedjiboune5@gmail.com",
         "see-project": "See project",
+        "form-name": "Name",
+        "form-email": "Email",
+        "form-message-label": "Message",
+        "form-submit": "Send message",
+        "qr-title": "📱 Scan to see my work",
+        "qr-note": "Or visit:",
+        "copy-btn": "Copy link",
+        "coordinates-title": "My contact details",
+        "footer-rights": "© 2026 Marie Simone DJIBOUNE. All rights reserved.",
+        "footer-made": "Built with HTML/CSS/JS",
         "contact-success": "✅ Thank you! I'll get back to you within 2 hours.",
         "contact-error": "Please fill in all fields.",
         "contact-email-error": "Please enter a valid email address.",
@@ -576,10 +614,11 @@ function translateStaticTexts(lang) {
         const key = el.getAttribute('data-i18n');
         if (translations[lang] && translations[lang][key]) {
             if (el.tagName === 'LABEL' && el.querySelector('.required')) {
-                // Conserver l'étoile
                 const star = el.querySelector('.required');
                 el.innerHTML = translations[lang][key] + ' ';
                 el.appendChild(star);
+            } else if (key === 'home-greeting') {
+                el.innerHTML = translations[lang][key];
             } else {
                 el.textContent = translations[lang][key];
             }

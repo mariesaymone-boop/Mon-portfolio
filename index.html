@@ -44,9 +44,9 @@
         <section id="home" class="section home">
             <div class="home-content">
                 <div class="home-text">
-                    <h1>Bonjour, je suis <span class="highlight">Marie Simone DJIBOUNE</span></h1>
-                    <p class="title">Débutante en developpement web & Étudiante en Géomatique</p>
-                    <p class="bio">
+                    <h1 data-i18n="home-greeting">Bonjour, je suis <span class="highlight">Marie Simone DJIBOUNE</span></h1>
+                    <p class="title" data-i18n="home-title">Débutante en developpement web & Étudiante en Géomatique</p>
+                    <p class="bio" data-i18n="home-bio">
                         Étudiante motivée et dynamique en GEOMATIQUE, cherchant à acquérir des connaissances 
                         et de l'expérience professionnelle, en étude des sciences géographiques et en informatique.
                         Passionnée par la cartographie interactive et le développement web, 
@@ -157,7 +157,7 @@
   <script>
     document.addEventListener('DOMContentLoaded', function() {
         // Utilisez l'URL de votre choix : soit window.location.href, soit votre lien GitHub
-        const url = "https://mariesaymone-boop.github.io/Mon-projet/"; // Remplacez par votre vrai lien
+        const url = "https://mariesaymone-boop.github.io/Mon-portfolio/";
         const qrContainer = document.getElementById('qrcode');
         const urlSpan = document.getElementById('current-url');
         
@@ -185,7 +185,12 @@
         }
     });
 </script>
-<!-- Bouton pour remonter en haut -->
+<!-- Bouton WhatsApp flottant -->
+<a href="https://wa.me/221784485512" target="_blank" class="whatsapp-btn" aria-label="Contacter sur WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+</a>
+
+
 <button id="scrollToTopBtn" class="scroll-to-top" onclick="scrollToTop()">
     <i class="fas fa-arrow-up"></i>
 </button>
