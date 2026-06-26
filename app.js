@@ -333,7 +333,7 @@ window.addEventListener("click", (e) => {
         })
         .then(response => {
             if (response.ok) {
-                showFormMessage("✅ Merci ! Je te réponds dans 2 heures.", "success");
+                showFormMessage("✅ Merci ! Je te réponds dans les plus brefs délais.", "success");
                 contactForm.reset();
             } else {
                 showFormMessage("Une erreur est survenue. Réessaie.", "error");
@@ -451,7 +451,7 @@ const translations = {
        "coordinates-title": "Mes coordonnées",
        "footer-rights": "© 2026 Marie Simone DJIBOUNE. Tous droits réservés.",
        "footer-made": "Réalisé en HTML/CSS/JS",
-       "contact-success": "✅ Merci ! Je te réponds dans 2 heures.",
+       "contact-success": "✅ Merci ! Je te réponds dans les plus brefs délais.",
        "contact-error": "Veuillez remplir tous les champs.",
        "contact-email-error": "Veuillez entrer un email valide.",
        "contact-domain-error": "Veuillez saisir le nom de domaine (ex: .com, .fr).",
@@ -489,7 +489,7 @@ const translations = {
         "coordinates-title": "My contact details",
         "footer-rights": "© 2026 Marie Simone DJIBOUNE. All rights reserved.",
         "footer-made": "Built with HTML/CSS/JS",
-        "contact-success": "✅ Thank you! I'll get back to you within 2 hours.",
+        "contact-success": "✅ Thank you! I'll get back to you as soon as possible.",
         "contact-error": "Please fill in all fields.",
         "contact-email-error": "Please enter a valid email address.",
         "contact-domain-error": "Please enter a domain name (e.g. .com, .fr).",
